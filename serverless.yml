@@ -20,6 +20,8 @@ service: hello-world
 provider:
   name: aws
   runtime: nodejs4.3
+  stage: dev
+  region: eu-central-1
 
 # you can overwrite defaults here
 #  stage: dev
@@ -61,10 +63,10 @@ functions:
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
-#    events:
-#      - http:
-#          path: users/create
-#          method: get
+    events:
+     - http:
+         path: hello-world
+         method: get
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
 #      - sns: greeter-topic
